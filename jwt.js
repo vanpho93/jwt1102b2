@@ -13,10 +13,22 @@ const sign = (obj) => (
     })
 );
 
-jwt.verify('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtob2FwaGFtIiwiaWF0IjoxNDkxMDMwODEyLCJleHAiOjE0OTEwMzMwMDB9.0Ie_Pd0Q-pQrFr2NVO2RGfL7lsTZIihndmQZcwR_ufU', SECRET_KEY, (err, decoded) => {
-    if (err) return console.log(err);
-    console.log(decoded);
-});
+const verify = (token) => (
+    new Promise((resovle, reject) => {
+        jwt.verify(token, SECRET_KEY, (err, decoded) => {
+            if (err) return reject(err);
+            resovle(decoded);
+        });
+    })
+);
+
+const main = async () => {
+    const token = await sign({ name: 'Khoa Pham' });
+    const decode = await verify(token);
+    console.log(decode);
+};
+
+main();
 
 /*
     input: object
