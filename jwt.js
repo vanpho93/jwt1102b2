@@ -13,10 +13,10 @@ const sign = (obj) => (
     })
 );
 
-sign({ name: 'khoapham' })
-.then(token => console.log(token))
-.catch(err => console.log(err));
-
+jwt.verify('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtob2FwaGFtIiwiaWF0IjoxNDkxMDMwODEyLCJleHAiOjE0OTEwMzMwMDB9.0Ie_Pd0Q-pQrFr2NVO2RGfL7lsTZIihndmQZcwR_ufU', SECRET_KEY, (err, decoded) => {
+    if (err) return console.log(err);
+    console.log(decoded);
+});
 
 /*
     input: object
