@@ -13,7 +13,6 @@ const sign = (obj) => (
     })
 );
 
-<<<<<<< HEAD
 const verify = (token) => (
     new Promise((resovle, reject) => {
         jwt.verify(token, SECRET_KEY, (err, decoded) => {
@@ -30,12 +29,6 @@ const main = async () => {
 };
 
 main();
-=======
-jwt.verify('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtob2FwaGFtIiwiaWF0IjoxNDkxMDMwODEyLCJleHAiOjE0OTEwMzMwMDB9.0Ie_Pd0Q-pQrFr2NVO2RGfL7lsTZIihndmQZcwR_ufU', SECRET_KEY, (err, decoded) => {
-    if (err) return console.log(err);
-    console.log(decoded);
-});
->>>>>>> 87fcb06692dab453a330888c3d61ac2eed75973a
 
 /*
     input: object
