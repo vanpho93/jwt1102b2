@@ -1,0 +1,14 @@
+{
+  "name": "jwt1102b2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/vanpho93/jwt1102b2.git",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.2",
+    "jsonwebtoken": "^7.3.0"
+  },
+  "devDependencies": {
+    "eslint-config-rallycoding": "^3.2.0"
+  }
+}
