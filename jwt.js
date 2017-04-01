@@ -2,11 +2,9 @@ const jwt = require('jsonwebtoken');
 
 const SECRET_KEY = 'df2h8de8wjsabdadf';
 
-
-
 const sign = (obj) => (
     new Promise((resovle, reject) => {
-        jwt.sign(obj, SECRET_KEY, { expiresIn: 5 }, (err, token) => {
+        jwt.sign(obj, SECRET_KEY, { expiresIn: 60 }, (err, token) => {
             if (err) return reject(err);
             resovle(token);
         });
@@ -22,13 +20,15 @@ const verify = (token) => (
     })
 );
 
-const main = async () => {
-    const token = await sign({ name: 'Khoa Pham' });
-    const decode = await verify(token);
-    console.log(decode);
-};
+module.exports = { sign, verify };
 
-main();
+// const main = async () => {
+//     const token = await sign({ name: 'Khoa Pham' });
+//     const decode = await verify(token);
+//     console.log(decode);
+// };
+
+// main();
 
 /*
     input: object
