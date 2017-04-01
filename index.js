@@ -21,3 +21,5 @@ app.get('/vaorap', (req, res) => {
 app.get('/muave', (req, res) => {
     res.send('Ban da mua ve');
 });
+
+// {daMuaVe: true}
