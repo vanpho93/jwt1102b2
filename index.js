@@ -40,7 +40,7 @@ app.get('/public', (req, res) => res.send('public page'));
 app.get('/private', (req, res) => {
     const token = req.cookies.token;
     verify(token)
-    .then(() => res.send('This is Private page'))
+    .then(decoded => res.send('This is Private page ' + decoded.username))
     .catch(() => res.redirect('/public'));
 });
 
